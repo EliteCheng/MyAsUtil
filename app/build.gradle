@@ -5,7 +5,7 @@ android {
     buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "elite.cheng.myasutil"
-        minSdkVersion 18
+        minSdkVersion 17
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"

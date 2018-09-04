@@ -8,13 +8,16 @@ import elite.cheng.myasutil.BR;
 /**
  * Created by TC on 2018/8/8.
  */
-public class UserInfo extends BaseObservable {
+
+public class UserInfo extends BaseObservable{
 
     private String name;
     private int age;
 
     @Override
     public String toString() {
+        notifyPropertyChanged(BR.name);
+        notifyPropertyChanged(BR.age);
         return "UserInfo{" +
                 "name='" + name + '\'' +
                 ", age=" + age +

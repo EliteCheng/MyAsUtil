@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
@@ -10,11 +10,15 @@
             type="UserInfo" />
 
         <variable
-            name="testString"
+            name="userNameUndefined"
             type="String" />
+
+        <variable
+            name="isVisable"
+            type="Boolean" />
     </data>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
@@ -31,7 +35,23 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@={testString}"
+            android:text="@{userNameUndefined}"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.toString()}"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{isVisable.toString()}"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="20sp" />
@@ -39,16 +59,16 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/app_name"
-            android:inputType="text"
-            android:text="@={user.name}" />
+            android:inputType="textAutoComplete"
+            android:hint="@string/dataBindingUserName"
+            android:text="@={userNameUndefined}" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/app_name"
-            android:inputType="text"
-            android:text="@={testString}" />
+            android:inputType="textAutoComplete"
+            android:hint="@string/dataBindingString"
+            android:text="@={user.name}" />
 
     </LinearLayout>
 </layout>
